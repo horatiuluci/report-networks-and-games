@@ -1,0 +1,39 @@
+part1
+
+1. Generate Erdos-Renye Network (Random Networks)
+    - N = Disconnected nodes = 10000
+    - node degree average targered = 4
+    - K = total number of edges in network
+
+    Algorithm used:
+	N = 10 000 disconnected nodes
+	p = at least 0.00041 - probability of having an edge between 2 nodes
+	for x in range (0, N):
+		for y in range (x, N):
+			if a random float between 0 and 1 < p:
+				if x != y:
+					add edge between nodes x and y
+
+	-multiple links are not made, since every node pair is selected once
+
+2. distribution of the generated network
+	-  Plot the degree distribution of the generated network [FILE: deg_dist_plot.png]
+	- and gaussian fit it
+
+3) Generate a Barabasi-Albert network (Scale Free network)]:
+Algorithm :
+	- Start with 4 fully connected nodes
+	 - At each time step, add one new node with 4 links which you attach to the existing nodes with
+probability proportional to the number of links they already have.
+Pi= ki ∑kj
+where Pi is probability of attaching the new node to the node existing i, ki is the degree of the node i, and j sums over all the nodes in the networks. Check for the multiple links between the same nodes, as for the previous network, each pair of nodes can have maximum one link between them,
+	- Stop when you have 10000 nodes (N=10000).
+	
+Step by step explanation - https://www.geeksforgeeks.org/implementing-rich-getting-richer-phenomenon-using-barabasi-albert-model-in-python/ 
+
+
+The least square fitting procedure is the most simple and commonly used form of linear regression, thus providing a solution to the common issue of figuring out which the best fitting straight line through a points. [2] A way to probe for power-law behaviour with this procedure is to plot a histogram representing the frequency distribution of the quantity in some data along with a least-square linear regression on a log-log scale. Therefore the misconception is that the scaling parameter \alpha of a power-law is given by the absolute slope of the straight line. This method has the fault of generating significant systematic errors under relatively common conditions such as, during validation, when some non power law distributions appear to follow a power law for some small samples  [3]
+
+
+%[2] http://nuclear.fis.ucm.es/COMP-PHYS-13/statistics/Least%20Squares%20Fitting%202005_10_19.pdf
+%[3] https://arxiv.org/pdf/0706.1062.pdf
